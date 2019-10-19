@@ -1,0 +1,30 @@
+{
+  "layers":
+  [
+    {"filter_shape": [1, 2], "filter_number": 3, "type": "ConvLayer"},
+    {"filter_number":10, "type": "EIIE_Dense", "regularizer": "L2", "weight_decay": 5e-9},
+    {"type": "EIIE_Output_WithW","regularizer": "L2", "weight_decay": 5e-8}
+  ],
+  "training":{
+    "steps":8000,
+    "learning_rate":0.0001,
+    "batch_size":40,
+    "buffer_biased":5e-5,
+    "training_method":"Adam",
+    "loss_function":"loss_function6"
+  },
+
+  "input":{
+    "window_size":20,
+    "coin_number":20,
+    "feature_number":3,
+    "stock_num":201,
+    "all_days_used":2471
+  },
+
+  "trading":{
+    "learning_rate":0.0001,
+    "trading_consumption":0.0025
+  }
+}
+
